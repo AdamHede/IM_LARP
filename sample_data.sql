@@ -1,5 +1,6 @@
 -- =============================================
--- Sample Data Generation for Project Æsir (PostgreSQL)
+-- Updated Sample Data Generation for Project Æsir (PostgreSQL)
+-- Includes Emails and Phone Numbers
 -- =============================================
 
 -- Clear existing data (optional, use with caution!)
@@ -11,44 +12,48 @@
 -- DELETE FROM Employee;
 
 -- =============================================
--- 1. Populate Employee Table
+-- 1. Populate Employee Table (with Email and Phone)
+-- Emails: 4 random chars @ implement .dk/.no/.eu based on office
+-- Phone: Random 8-digit number
 -- =============================================
-INSERT INTO Employee (Name, Team, Department, Office, Tenure) VALUES
-('Astrid Jensen', 'Project Chimera', 'Research & Development', 'Copenhagen', 5),
-('Bjørn Hansen', 'Project Phoenix', 'Research & Development', 'Copenhagen', 8),
-('Clara Møller', 'Core Tech', 'Research & Development', 'Aarhus', 3),
-('David Nielsen', 'Nordics Team', 'Sales & Marketing', 'Copenhagen', 10),
-('Eva Kristensen', 'DACH Team', 'Sales & Marketing', 'Zurich', 6),
-('Frederik Andersen', 'Global Accounts', 'Sales & Marketing', 'Oslo', 4),
-('Greta Schmidt', 'Logistics', 'Operations', 'Zurich', 12),
-('Henrik Larsen', 'Facility Security', 'Operations', 'Copenhagen', 7),
-('Ingrid Olsen', 'IT Support', 'Operations', 'Aarhus', 2),
-('Jakob Pedersen', 'Audit Group', 'Finance', 'Copenhagen', 9),
-('Katrine Berg', 'Budget Control', 'Finance', 'Oslo', 5),
-('Lars Sørensen', 'Project Chimera', 'Research & Development', 'Aarhus', 6),
-('Maja Petersen', 'Project Phoenix', 'Research & Development', 'Copenhagen', 1),
-('Niklas Jørgensen', 'Core Tech', 'Research & Development', 'Oslo', 7),
-('Olivia Rasmussen', 'Nordics Team', 'Sales & Marketing', 'Aarhus', 3),
-('Peter Madsen', 'DACH Team', 'Sales & Marketing', 'Zurich', 11),
-('Quinn Eriksen', 'Global Accounts', 'Sales & Marketing', 'Copenhagen', 5),
-('Rasmus Thomsen', 'Logistics', 'Operations', 'Oslo', 8),
-('Sofia Vestergaard', 'Facility Security', 'Operations', 'Aarhus', 4),
-('Thomas Christiansen', 'IT Support', 'Operations', 'Zurich', 6),
-('Ursula Müller', 'Audit Group', 'Finance', 'Zurich', 15),
-('Viktor Nilsson', 'Budget Control', 'Finance', 'Copenhagen', 2),
-('Wilma Johansson', 'Project Chimera', 'Research & Development', 'Oslo', 9),
-('Xander Lund', 'Project Phoenix', 'Research & Development', 'Aarhus', 5),
-('Yrsa Holm', 'Core Tech', 'Research & Development', 'Copenhagen', 12),
-('Zane Fischer', 'Nordics Team', 'Sales & Marketing', 'Zurich', 1),
-('Anders Poulsen', 'Facility Security', 'Operations', 'Copenhagen', 10),
-('Birgitte Nygaard', 'Global Accounts', 'Sales & Marketing', 'Oslo', 7),
-('Christian Dahl', 'IT Support', 'Operations', 'Aarhus', 3),
-('Diana Bach', 'Audit Group', 'Finance', 'Zurich', 8); -- Total 30 employees
+INSERT INTO Employee (Name, Email, PhoneNumber, Team, Department, Office, Tenure) VALUES
+-- Copenhagen (.dk)
+('Astrid Jensen', 'qwer@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Chimera', 'Research & Development', 'Copenhagen', 5),
+('Bjørn Hansen', 'asdf@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Phoenix', 'Research & Development', 'Copenhagen', 8),
+('David Nielsen', 'zxcv@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Nordics Team', 'Sales & Marketing', 'Copenhagen', 10),
+('Henrik Larsen', 'tyui@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Facility Security', 'Operations', 'Copenhagen', 7),
+('Jakob Pedersen', 'ghjk@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Audit Group', 'Finance', 'Copenhagen', 9),
+('Maja Petersen', 'bnmm@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Phoenix', 'Research & Development', 'Copenhagen', 1),
+('Quinn Eriksen', 'fghj@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Global Accounts', 'Sales & Marketing', 'Copenhagen', 5),
+('Viktor Nilsson', 'erty@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Budget Control', 'Finance', 'Copenhagen', 2),
+('Yrsa Holm', 'cvbn@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Core Tech', 'Research & Development', 'Copenhagen', 12),
+('Anders Poulsen', 'hjkl@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Facility Security', 'Operations', 'Copenhagen', 10),
+-- Aarhus (.dk)
+('Clara Møller', 'uiop@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Core Tech', 'Research & Development', 'Aarhus', 3),
+('Ingrid Olsen', 'klbn@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'IT Support', 'Operations', 'Aarhus', 2),
+('Lars Sørensen', 'dfgh@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Chimera', 'Research & Development', 'Aarhus', 6),
+('Olivia Rasmussen', 'jklp@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Nordics Team', 'Sales & Marketing', 'Aarhus', 3),
+('Sofia Vestergaard', 'vbnm@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Facility Security', 'Operations', 'Aarhus', 4),
+('Xander Lund', 'erty@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Phoenix', 'Research & Development', 'Aarhus', 5),
+('Christian Dahl', 'yuio@implement.dk', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'IT Support', 'Operations', 'Aarhus', 3),
+-- Oslo (.no)
+('Frederik Andersen', 'wert@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Global Accounts', 'Sales & Marketing', 'Oslo', 4),
+('Katrine Berg', 'sdfg@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Budget Control', 'Finance', 'Oslo', 5),
+('Niklas Jørgensen', 'xcvb@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Core Tech', 'Research & Development', 'Oslo', 7),
+('Rasmus Thomsen', 'yuiop@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Logistics', 'Operations', 'Oslo', 8),
+('Wilma Johansson', 'hjkl@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Project Chimera', 'Research & Development', 'Oslo', 9),
+('Birgitte Nygaard', 'nmkl@implement.no', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Global Accounts', 'Sales & Marketing', 'Oslo', 7),
+-- Zurich (.eu)
+('Eva Kristensen', 'qayx@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'DACH Team', 'Sales & Marketing', 'Zurich', 6),
+('Greta Schmidt', 'wsdc@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Logistics', 'Operations', 'Zurich', 12),
+('Peter Madsen', 'rfvb@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'DACH Team', 'Sales & Marketing', 'Zurich', 11),
+('Thomas Christiansen', 'tgnm@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'IT Support', 'Operations', 'Zurich', 6),
+('Ursula Müller', 'zhjk@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Audit Group', 'Finance', 'Zurich', 15),
+('Zane Fischer', 'ujkl@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Nordics Team', 'Sales & Marketing', 'Zurich', 1),
+('Diana Bach', 'iklm@implement.eu', CAST(floor(random() * 90000000 + 10000000) AS TEXT), 'Audit Group', 'Finance', 'Zurich', 8); -- Total 30 employees
 
 -- =============================================
--- 2. Populate Characters Table
--- Assuming EmployeeIDs are generated sequentially starting from 1
--- Assigning stats somewhat randomly for variety (sum roughly 40)
+-- 2. Populate Characters Table (No changes needed in this part)
 -- =============================================
 INSERT INTO Characters (EmployeeID, Name, Description, Strength, Intelligence, Sneak, Charisma, Guild) VALUES
 (1, 'Viper', 'Adept at infiltration and extraction.', 8, 12, 15, 5, 'The Syndicate'),
@@ -83,7 +88,7 @@ INSERT INTO Characters (EmployeeID, Name, Description, Strength, Intelligence, S
 (30, 'Troll', 'Online disruption and misinformation.', 9, 13, 7, 11, 'Black Helix');
 
 -- =============================================
--- 3. Populate Quest Table
+-- 3. Populate Quest Table (No changes needed in this part)
 -- =============================================
 INSERT INTO Quest (Name, Description, Points) VALUES
 ('Operation Nightingale', 'Intercept sensitive communication logs from the R&D network.', 150),
@@ -98,7 +103,7 @@ INSERT INTO Quest (Name, Description, Points) VALUES
 ('Operation Silent Whisper', 'Gather intel on the upcoming product launch by eavesdropping in key locations.', 170);
 
 -- =============================================
--- 4. Populate GameLocations Table
+-- 4. Populate GameLocations Table (No changes needed in this part)
 -- =============================================
 INSERT INTO GameLocations (Name, RealWorldDescription) VALUES
 ('Server Farm Alpha', 'Basement - Data Center Sector A'),
@@ -110,12 +115,10 @@ INSERT INTO GameLocations (Name, RealWorldDescription) VALUES
 ('Archive Vault', 'Building C - Sub-level 2 - Record Storage'),
 ('Security Hub', 'Main Building - Floor 1 - Beside Main Entrance'),
 ('Logistics Bay 3', 'Warehouse D - Loading Dock Area 3'),
-('Zurich Safehouse', 'Zurich Office - Meeting Room 'Zebra'' );
+('Zurich Safehouse', 'Zurich Office - Meeting Room ''Zebra''');
 
 -- =============================================
--- 5. Populate Tasks Table
--- Linking Tasks to Quests and Locations
--- QuestIDs and LocationIDs assumed to be 1-10
+-- 5. Populate Tasks Table (No changes needed in this part)
 -- =============================================
 INSERT INTO Tasks (QuestID, TaskName, LocationID, Description, SkillsToCheck, SkillCheckDC) VALUES
 -- Op Nightingale (Quest 1)
@@ -127,7 +130,7 @@ INSERT INTO Tasks (QuestID, TaskName, LocationID, Description, SkillsToCheck, Sk
 (2, 'Lift Schematics', 10, 'Subtly acquire the schematic container from the courier.', 'Sneak', 16),
 (2, 'Escape Zurich Securely', 10, 'Leave the location without being identified or followed.', 'Sneak', 14),
 -- Chimera Sabotage (Quest 3)
-(3, 'Gain Lab Access', 4, 'Bypass security to enter Lab Sector 7G.', 'Tech', 15), -- Assuming Tech skill exists implicitly or using Intelligence/Sneak
+(3, 'Gain Lab Access', 4, 'Bypass security to enter Lab Sector 7G.', 'Intelligence', 15), -- Using Intelligence for Tech
 (3, 'Introduce Contaminant', 4, 'Subtly introduce the provided agent into the experiment apparatus.', 'Sneak', 14),
 (3, 'Wipe Entry Logs', 4, 'Remove digital traces of your access to the lab.', 'Intelligence', 16),
 -- Black Helix Extraction (Quest 4)
@@ -145,7 +148,7 @@ INSERT INTO Tasks (QuestID, TaskName, LocationID, Description, SkillsToCheck, Sk
 (7, 'Gather Local Intel', 2, 'Ask around the Whispering Gallery for any sightings or rumors.', 'Charisma', 14),
 (7, 'Check Last Known Location', 7, 'Investigate the Archive Vault for clues left by the agent.', 'Intelligence', 13),
 -- Secure the Server Room (Quest 8)
-(8, 'Reinforce Door Lock', 1, 'Add a secondary lock mechanism to the server room door.', 'Strength', 12), -- Assuming Strength skill
+(8, 'Reinforce Door Lock', 1, 'Add a secondary lock mechanism to the server room door.', 'Strength', 12),
 (8, 'Monitor Access Panel', 1, 'Watch the electronic access panel for tampering attempts.', 'Intelligence', 14),
 -- Audit Trail Anomaly (Quest 9)
 (9, 'Analyze Log Files', 7, 'Examine the finance logs in the Archive Vault for inconsistencies.', 'Intelligence', 15),
@@ -157,9 +160,7 @@ INSERT INTO Tasks (QuestID, TaskName, LocationID, Description, SkillsToCheck, Sk
 
 
 -- =============================================
--- 6. Populate Character_Quest_Assignment Table
--- Assigning ~4 Characters per Quest randomly for this example
--- CharacterIDs assumed 1-30, QuestIDs 1-10
+-- 6. Populate Character_Quest_Assignment Table (No changes needed in this part)
 -- =============================================
 INSERT INTO Character_Quest_Assignment (CharacterID, QuestID, Role, Status) VALUES
 -- Quest 1: Op Nightingale (Characters: 1, 8, 12, 20)
@@ -176,11 +177,11 @@ INSERT INTO Character_Quest_Assignment (CharacterID, QuestID, Role, Status) VALU
 (3, 6, 'Info Broker', 'Assigned'), (14, 6, 'Infiltrator', 'Assigned'), (24, 6, 'Muscle', 'Assigned'), (27, 6, 'Muscle', 'Assigned'),
 -- Quest 7: Missing Agent (Characters: 9, 11, 17, 19)
 (9, 7, 'Tracker', 'Assigned'), (11, 7, 'Planner', 'Assigned'), (17, 7, 'Guardian', 'Assigned'), (19, 7, 'Recovery', 'Assigned'),
--- Quest 8: Secure Server Room (Characters: 7, 17, 23, 27) -- Re-using some security/muscle types
+-- Quest 8: Secure Server Room (Characters: 7, 17, 23, 27)
 (7, 8, 'Defender', 'Assigned'), (17, 8, 'Defender', 'Assigned'), (23, 8, 'Psych Ops', 'Assigned'), (27, 8, 'Defender', 'Assigned'),
--- Quest 9: Audit Trail Anomaly (Characters: 8, 12, 21, 25) -- Re-using some intel/analysis types
+-- Quest 9: Audit Trail Anomaly (Characters: 8, 12, 21, 25)
 (8, 9, 'Analyst', 'Assigned'), (12, 9, 'Investigator', 'Assigned'), (21, 9, 'Forensics', 'Assigned'), (25, 9, 'Interviewer', 'Assigned'),
--- Quest 10: Op Silent Whisper (Characters: 1, 9, 14, 28) -- Re-using some sneak types
+-- Quest 10: Op Silent Whisper (Characters: 1, 9, 14, 28)
 (1, 10, 'Infiltrator', 'Assigned'), (9, 10, 'Surveillance', 'Assigned'), (14, 10, 'Infiltrator', 'Assigned'), (28, 10, 'Technician', 'Assigned');
 
 -- =============================================
